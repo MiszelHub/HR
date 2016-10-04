@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding='utf-8' ?>
+<?xml-stylesheet href="./Zadanie1.css" type="text/css"?>
+<!DOCTYPE OtoMotor SYSTEM "Zadanie1.dtd" >
+
+<OtoMotor>
+    <dane_pojazdów opis="Nasza baza danych">
+        <silniki>
+            <silnik id="V2.0" moc="150" pojemność="2.0" paliwo="benzyna"/>
+            <silnik id="V1.6" moc="96" pojemność="1.6" paliwo="benzyna"/>
+            <silnik id="V1.4" moc="77" pojemność="1.4" paliwo="diesel"/>
+            <silnik id="V3.0" moc="350" pojemność="3.0" paliwo="benzyna"/>
+        </silniki>
+
+        <skrzynie>
+            <skrzynia id="ReF2324" typ="manualna" ilość_biegów="6"/>
+            <skrzynia id="ReF3412" typ="automatyczna" ilość_biegów="5"/>
+            <skrzynia id="ReF2222" typ="manualna" ilość_biegów="6"/>
+        </skrzynie>
+
+        <znane_pojazdy>
+            <pojazd id="Pe206" marka="Peugeot" model="206" dodatki="CB Radio"/>
+            <pojazd id="CiBe" marka="Citroen" model="Berlingo"/>
+            <pojazd id="BMWe46" marka="Bmw" model="e46"/>
+            <pojazd id="Volks4" marka="Volkswagen" model="4" dodatki="fotelik"/>
+            <pojazd id="Audia4" marka="Audi" model="a4" dodatki="CB Radio"/>
+        </znane_pojazdy>
+
+    </dane_pojazdów>
+    <oferta>
+        <wózek IdPojazdu="Pe206">
+            <wózek_silnik IdSilnika="V2.0"/>
+            <wózek_skrzynia IdSkrzyni="ReF2324"/>
+            <rok_produkcji>11/10/1998</rok_produkcji>
+            <opis>Kupuj Pan</opis>
+            <kolor>Wiśniowy</kolor>
+            <kraj_pochodzenia>DE</kraj_pochodzenia>
+            <nr_tel>123123123</nr_tel>
+            <cena waluta="PLN">1200.20</cena>
+            <przegląd>12/11/2016</przegląd>
+            <zdjęcie src="src/peugeot206.png"/>
+        </wózek>
+        <wózek IdPojazdu="CiBe">
+            <wózek_silnik IdSilnika="V2.0"/>
+            <wózek_skrzynia IdSkrzyni="ReF3412"/>
+            <rok_produkcji>12/10/1997</rok_produkcji>
+            <opis>Super fura</opis>
+            <kolor>Szary</kolor>
+            <kraj_pochodzenia>FR</kraj_pochodzenia>
+            <nr_tel>1245732</nr_tel>
+            <cena waluta="EUR">5000</cena>
+            <zdjęcie src="src/citroen.png"/>
+        </wózek>
+        <wózek IdPojazdu="BMWe46">
+            <wózek_silnik IdSilnika="V1.6"/>
+            <wózek_skrzynia IdSkrzyni="ReF2324"/>
+            <rok_produkcji>11/07/2001</rok_produkcji>
+            <opis>Porządny pojazd</opis>
+            <kolor>Metalic</kolor>
+            <kraj_pochodzenia>DE</kraj_pochodzenia>
+            <nr_tel>5656123</nr_tel>
+            <cena waluta="EUR">4000.44</cena>
+            <zdjęcie src="src/bmw.png"/>
+        </wózek>
+        <wózek IdPojazdu="Volks4">
+            <wózek_silnik IdSilnika="V1.4"/>
+            <wózek_skrzynia IdSkrzyni="ReF2222"/>
+            <rok_produkcji>01/12/2004</rok_produkcji>
+            <opis>Niemiecki pojazd</opis>
+            <kolor>Srebrny</kolor>
+            <kraj_pochodzenia>PL</kraj_pochodzenia>
+            <nr_tel>1247601</nr_tel>
+            <cena waluta="PLN">14451.45</cena>
+            <zdjęcie src="src/volkswagen4.png"/>
+        </wózek>
+        <wózek IdPojazdu="Audia4">
+            <wózek_silnik IdSilnika="V3.0"/>
+            <wózek_skrzynia IdSkrzyni="ReF2222"/>
+            <rok_produkcji>12/06/2011</rok_produkcji>
+            <opis>Szybka fura;)</opis>
+            <kolor>Biały</kolor>
+            <kraj_pochodzenia>US</kraj_pochodzenia>
+            <nr_tel>464624324</nr_tel>
+            <cena waluta="USD">15674.34</cena>
+            <przegląd>11/05/2017</przegląd>
+            <zdjęcie src="src/audia4.png"/>
+        </wózek>
+    </oferta>
+    <autorzy>
+        <autor nazwa="Maciej Skorek" index="195707"/>
+        <autor nazwa="Maciej Pluta" index="195685"/>
+    </autorzy>
+</OtoMotor>
