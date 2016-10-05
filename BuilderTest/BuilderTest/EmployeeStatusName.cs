@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BuilderTest
 {
-    public enum EmployeeStatus
+    public enum EmployeeStatusName
     {
         Working,
         SickLeave,
@@ -14,4 +14,5 @@ namespace BuilderTest
         ErnedLeave,
         HalfPayLeave
     }
+
 }

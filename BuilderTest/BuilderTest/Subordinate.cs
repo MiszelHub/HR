@@ -5,20 +5,9 @@ using System.Text;
 
 namespace BuilderTest
 {
-    public abstract class Subordinate : Employee
+    public class Subordinate : Employee
     {
 
-        public Job Job
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
     }
 
 }

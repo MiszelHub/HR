@@ -17,5 +17,11 @@ namespace BuilderTest
             this.jobDescription = jobDescription;
             this.jobSupervisor = jobSupervisor;
         }
+
+        public Job(Supervisor jobSupervisor, string jobDescription)
+        {
+            this.jobDescription = jobDescription;
+            this.jobSupervisor = jobSupervisor;
+        }
     }
 }

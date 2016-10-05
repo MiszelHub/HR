@@ -5,11 +5,14 @@ using System.Text;
 
 namespace BuilderTest
 {
-    public abstract class Supervisor : Employee, IManager
+    public class Supervisor : Employee, IManager
     {
         protected List<Subordinate> employees;
 
-        public abstract List<EmployeeStatus> CheckAllSubordinateStatus();
+        public List<EmployeeStatus> CheckAllSubordinateStatus()
+        {
+            throw new NotImplementedException();
+        }
     }
      
 }
