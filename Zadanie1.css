@@ -1,0 +1,259 @@
+/*sekja opisu dokumentu*/
+
+
+/*sekcja zawarto�ci*/
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 0 100%; }
+}
+
+@keyframes animation2 {
+    0%   {left:0px; top:0px;}
+    10%   {letter-spacing: 1px;}
+    20%   {letter-spacing: 2px;}
+    30%   {letter-spacing: 3px;}
+    40%   {letter-spacing: 4px;}
+    50%  {letter-spacing: 5px;background-color: red;left:-600px; top:0px;}
+    60%   {letter-spacing: 4px;}
+    70%   {letter-spacing: 3px;}
+    80%   {letter-spacing: 2px;}
+    90%   {letter-spacing: 1px;}
+    100% {left:0px; top:0px;}
+}
+
+@keyframes animation3 {
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-100%);}
+  100% {transform:translateY(0%);}
+}
+
+OtoMotor{
+	display:block;
+	padding-left: 5px;
+	background-color:lightsteelblue;
+}
+
+OtoMotor > *{
+    top-margin: 10px;
+}
+
+dane_pojazdów{
+	display:table;
+	border: solid red;
+	border-radius: 2ex;
+    padding: 10px;
+    background-color: gold;
+    position: fixed;
+}
+dane_pojazdów > *{
+	display:none;
+	margin-left:10px;
+	margin-top: 10px;
+	border: solid;
+	width: 400px;
+	border: 10px solid;
+}
+dane_pojazdów:hover > *{
+	display:table-row;
+}
+
+dane_pojazdów:hover:before {
+	content: "";
+}
+
+oferta::before{
+	display:block;
+	content: "Nasze oferty:";
+	text-align: center;
+	font-family: Georgia;
+	font-size: 200%;
+	font-style: italic;
+	font-weight: bold;
+	color: rgb(255,0,0);
+}
+
+oferta > wózek{
+    border: solid blue;
+    border-radius: 3ex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: green;
+    padding: 5px;
+}
+
+wózek {
+    display: block;
+    border: solid;
+    width: 900px;
+    margin-top: 10px;
+    margin-left: 50px;
+
+}
+
+
+wózek[IdPojazdu="Pe206"] {
+     background: url("src/peugeot206.png");
+     background-position: right;
+     background-size: 600px 450px;
+     background-repeat: no-repeat ;
+     animation: animatedBackground 10s linear infinite;
+}
+
+wózek[IdPojazdu="CiBe"]{
+     background: url("src/citroen.png");
+     background-size: 600px 450px;
+     background-repeat: no-repeat;
+     animation: animatedBackground 10s linear infinite;
+}
+
+wózek[IdPojazdu="BMWe46"]{
+    background: url("src/bmw.png");
+         background-size: 600px 450px;
+         background-repeat: no-repeat;
+         animation: animatedBackground 10s linear infinite;
+}
+
+wózek[IdPojazdu="Volks4"]{
+    background: url("src/volkswagen4.png");
+         background-size: 600px 450px;
+         background-repeat: no-repeat;
+         animation: animatedBackground 10s linear infinite;
+}
+
+wózek[IdPojazdu="Audia4"]{
+    background: url("src/audia4.png");
+         background-size: 600px 450px;
+         background-repeat: no-repeat;
+         animation: animatedBackground 10s linear infinite;
+}
+
+
+nr_tel, cena{
+    border: double;
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    color: blue;
+    position: relative;
+    animation-name: animation2;
+    background-repeat: no-repeat ;
+    animation-duration: 10s;
+}
+
+wózek > * {
+    display: block;
+    color: black;
+    padding: 5px;
+    margin-left:600px;
+    background-color: gold;
+}
+
+wózek > *::before{
+    margin-left: 10px;
+}
+
+wózek > wózek_silnik::before{
+    content: "Model silnika: " attr(IdSilnika);
+}
+
+wózek > wózek_skrzynia::before{
+    content: "Model skrzyni:" attr(IdSkrzyni);
+}
+
+wózek > rok_produkcji::before{
+    content: "Rok produkcji ";
+}
+wózek > opis::before{
+    content: "Opis: ";
+}
+wózek > kolor::before{
+    content: "Kolor: ";
+}
+wózek > kraj_pochodzenia::before{
+    content: "Kraj: ";
+}
+wózek > nr_tel::before{
+    content: "Kontakt: ";
+}
+wózek > cena::before{
+    content: "Cena: "
+}
+wózek > cena::after{
+    content: attr(waluta);
+}
+wózek > przegląd::before{
+    content: "Data następnego przeglądu: ";
+}
+
+dane_pojazdów::before{
+	content: "Najedź, aby sprawdzić bazę danych.";
+	
+}
+silniki::before{
+	content:"Silniki:";
+	margin-left:10px;
+}
+skrzynie::before{
+	content: "Skrzynie:";
+	margin-left:10px;
+}
+znane_pojazdy::before{
+	content:"Samochody:";
+	margin-left:10px;
+}
+
+znane_pojazdy{
+    background-color: darkkhaki;
+}
+
+skrzynie > skrzynia::before{
+	content: "Model :" attr(id) " typ:" attr(typ) " ilość biegów:" attr(ilość_biegów);
+	margin-left:30px;
+	display:list-item;
+}
+
+skrzynie{
+    background-color: greenyellow;
+}
+
+silniki > silnik::before{
+	content: "Model:" attr(id) " moc:" attr(moc) " pojemność:" attr(pojemność) " paliwo:" attr(paliwo);
+	margin-left:30px;
+	display:list-item;
+}
+
+silniki{
+    background-color: aqua;
+}
+
+znane_pojazdy > pojazd::before{
+	content: "marka:" attr(marka) " model:" attr(model) " dodatki:" attr(dodatki);
+	margin-left:30px;
+	display:list-item;
+}
+autorzy{
+	display: block;
+	float: right;
+	overflow: hidden;
+	height: 20px;
+	border: dotted red;
+}
+
+autor{
+	color: rgb(100,100,100);
+	font-family: sans-serif;
+    font-style: oblique;
+    font-size: 14px;
+}
+
+autorzy > autor::before{
+	content: "Copyrigth " attr(nazwa) " " attr(index);
+	display: list-item;
+	animation-name: animation3;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+}
+autorzy > autor:last-child:after{
+	content: ".";
+}

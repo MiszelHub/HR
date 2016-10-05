@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding='utf-8' ?>
+
+        <!ENTITY % waluta "(PLN|EUR|USD)">
+        <!ENTITY % biegi "(1|2|3|4|5|6|7)">
+        <!ENTITY % typ_skrzyni "(manualna|automatyczna)">
+        <!ENTITY % rodzaj_paliwa "(benzyna|diesel)">
+        <!ELEMENT OtoMotor (dane_pojazdów, oferta,autorzy)>
+
+        <!ELEMENT dane_pojazdów (silniki,skrzynie,znane_pojazdy)>
+        <!ATTLIST dane_pojazdów opis CDATA #REQUIRED>
+        <!ELEMENT silniki (silnik*)>
+        <!ELEMENT silnik EMPTY>
+        <!ATTLIST silnik
+                id ID #REQUIRED
+                moc CDATA #REQUIRED
+                pojemność CDATA #REQUIRED
+                paliwo %rodzaj_paliwa; #REQUIRED>
+
+        <!ELEMENT skrzynie (skrzynia*)>
+        <!ELEMENT skrzynia EMPTY>
+        <!ATTLIST skrzynia
+                id ID #REQUIRED
+                typ %typ_skrzyni; #REQUIRED
+                ilość_biegów %biegi; #REQUIRED>
+
+        <!ELEMENT znane_pojazdy (pojazd*)>
+        <!ELEMENT pojazd EMPTY>
+        <!ATTLIST pojazd
+                id ID #REQUIRED
+                marka CDATA #REQUIRED
+                model CDATA #REQUIRED
+                dodatki CDATA #IMPLIED>
+
+        <!ELEMENT oferta (wózek*)>
+        <!ELEMENT wózek (wózek_silnik,wózek_skrzynia,rok_produkcji,opis,kolor,kraj_pochodzenia,nr_tel,cena,przegląd?,zdjęcie)>
+        <!ATTLIST wózek
+                IdPojazdu IDREF #REQUIRED>
+
+        <!ELEMENT wózek_silnik EMPTY>
+        <!ATTLIST wózek_silnik IdSilnika IDREF #REQUIRED>
+
+        <!ELEMENT wózek_skrzynia EMPTY>
+        <!ATTLIST wózek_skrzynia IdSkrzyni IDREF #REQUIRED>
+
+        <!ELEMENT rok_produkcji (#PCDATA)>
+
+        <!ELEMENT opis (#PCDATA)>
+
+        <!ELEMENT kolor (#PCDATA)>
+
+        <!ELEMENT kraj_pochodzenia (#PCDATA)>
+
+        <!ELEMENT nr_tel (#PCDATA)>
+
+        <!ELEMENT cena (#PCDATA)>
+        <!ATTLIST cena waluta %waluta; #REQUIRED>
+
+        <!ELEMENT przegląd (#PCDATA)>
+
+        <!ELEMENT zdjęcie EMPTY>
+        <!ATTLIST zdjęcie
+                src CDATA #REQUIRED>
+
+        <!ELEMENT autorzy (autor+)>
+        <!ELEMENT autor EMPTY>
+        <!ATTLIST autor
+                nazwa CDATA #REQUIRED
+                index CDATA #REQUIRED>
